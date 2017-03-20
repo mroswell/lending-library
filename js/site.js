@@ -3,6 +3,11 @@ function drawToolBox(data) {
     'rows': data
   })
   $('#tools').html(tools)
+  
+    var articleTable = ich.articleTable({
+    'rows': data
+  })
+  $('#articleTable').append(tools)
 }
 
 $(document).on( 'click', '#showAvailable', toggleAvailable)
