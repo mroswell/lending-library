@@ -47,7 +47,7 @@
 				</div>
 		</div>
 
-		<script id="tools" type="text/html">
+		<script id="map" type="text/html">
 		{{#rows}}
 		<div id="{{rowNumber}}" class="tool-box {{#checkedout}}not-{{/checkedout}}available">
 			<span class="tool-box-tool">{{state1}}</span>
@@ -70,7 +70,7 @@
 		<table>
 			<tr><th class="fancy">&#8470;</th><th class="date">State</th><th class="">Claimed by</th><th>Issue</th><th>Notes</th></tr>
 		  {{#rows}}
-		  	<tr class="{{rowNumber}}"><td class="light-type">{{rowNumber}}</td><td class="state">{{state1}}</td><td class="article"><a href="{{githubname}}" target="_blank">{{githubname}</a>{{githubissue}} {{notes}}</td>
+		  	<tr class="{{rowNumber}}"><td class="light-type">{{rowNumber}}</td><td class="state">{{state1}}</td><td class="article"><a href="{{githubname}}" target="_blank"></a></td><td>{{githubname}</td><td>{{githubissue}}</td> {{notes}}
 		  {{/rows}}
 	  </table>
 	</script>
