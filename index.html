@@ -56,7 +56,7 @@
 			<span class="tool-box-tool">{{state}}</span>
 			<div class="tool-box-bottom {{rowNumber}}">
 				{{#checkedout}} <span class="tool-box-borrowed">CLAIMED</span>{{/checkedout}}
-				{{^checkedout}}<a href="mailto:{{owneremail}}?subject=Tool Lending: {{tool}}"><span class="tool-box-borrow btn">BORROW</span></a>{{/checkedout}}
+				{{^checkedout}}<a href="mailto:{{owneremail}}?subject=[Open States - {{state}}]"><span class="tool-box-borrow btn">CONTACT VOLUNTEER</span></a>{{/checkedout}}
 				<ul>
 					<li><small>WHO / WHERE : </small></li>
 					<li><a href="mailto:{{owneremail}}">{{owner}}</a></li>
