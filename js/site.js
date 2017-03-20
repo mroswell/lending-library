@@ -7,7 +7,7 @@ function drawToolBox(data) {
     var articleTable = ich.articleTable({
     'rows': data
   })
-  $('#tools').append(articleTable)
+  $('#stateTable').append(articleTable)
 }
 
 $(document).on( 'click', '#showAvailable', toggleAvailable)
