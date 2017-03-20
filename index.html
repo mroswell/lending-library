@@ -63,6 +63,15 @@
 		</div>
 		{{/rows}}
 		</script>
+		
+			<script id="articleTable" type="text/html">
+		<table>
+			<tr><th class="fancy">&#8470;</th><th class="date">State</th><th class="">Claimed by</th><th>Issue</th><th>Notes</th></tr>
+		  {{#rows}}
+		  	<tr class="{{rowNumber}}"><td class="light-type">{{rowNumber}}</td><td class="state">{{state1}}</td><td class="article"><a href="{{githubname}}" target="_blank">{{githubname}</a>{{githubissue}} {{notes}}</td>
+		  {{/rows}}
+	  </table>
+	</script>
 
 		<script type="text/javascript">
 		  document.addEventListener('DOMContentLoaded', function() {
