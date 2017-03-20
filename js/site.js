@@ -1,8 +1,8 @@
 function drawToolBox(data) {
-  var tools = ich.tools({
-    'rows': data
-  })
-  $('#tools').html(tools)
+  // var tools = ich.tools({
+  //  'rows': data
+  //})
+  // $('#tools').html(tools)
   
     var articleTable = ich.articleTable({
     'rows': data
