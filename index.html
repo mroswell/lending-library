@@ -48,7 +48,7 @@
 		<script id="tools" type="text/html">
 		{{#rows}}
 		<div id="{{rowNumber}}" class="tool-box {{#checkedout}}not-{{/checkedout}}available">
-			<span class="tool-box-tool">{{state}}</span>
+			<span class="tool-box-tool">{{state1}}</span>
 			<div class="tool-box-bottom {{rowNumber}}">
 				{{#checkedout}} <span class="tool-box-borrowed">CLAIMED</span>{{/checkedout}}
 				{{^checkedout}}<!==a href="mailto:{{owneremail}}?subject=[Open States - {{state1}}]"><span class="tool-box-borrow btn">CONTACT VOLUNTEER</span></a-->{{/checkedout}}
