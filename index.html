@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 	<html lang="en">
 	<head>
-		<title>Tool Lending</title>
+		<title>Open States Status</title>
 		<meta charset='utf-8'>
 		<script type="text/javascript" src="js/ICanHaz.js"></script>
 		<script type="text/javascript" src='js/jquery.js'></script>
@@ -15,8 +15,8 @@
 		<header class="container">
 			<h1>Open States Status</h1>
 			<ul class="nav">
-				<li><strong>LENDING IS LOVELY</strong></li>
-				<li>AN OPEN SOURCE, LEGISLATIVE DATA PROJECT</li>
+				<li><strong>AN OPEN SOURCE, LEGISLATIVE DATA PROJECT</strong></li>
+				<li>Volunteer-Driven</li>
 				<!--li><a href="mailto:mroswell@gmail.com?subject=Request%20Access&body=Please%20add%20me">REQUEST EDIT ACCESS</a></li-->
 			</ul>
 		</header>
@@ -51,7 +51,7 @@
 			<span class="tool-box-tool">{{state}}</span>
 			<div class="tool-box-bottom {{rowNumber}}">
 				{{#checkedout}} <span class="tool-box-borrowed">CLAIMED</span>{{/checkedout}}
-				{{^checkedout}}<a href="mailto:{{owneremail}}?subject=[Open States - {{state}}]"><span class="tool-box-borrow btn">CONTACT VOLUNTEER</span></a>{{/checkedout}}
+				{{^checkedout}}<!==a href="mailto:{{owneremail}}?subject=[Open States - {{state}}]"><span class="tool-box-borrow btn">CONTACT VOLUNTEER</span></a-->{{/checkedout}}
 				<ul>
 					<li><small>WHO / WHERE : </small></li>
 					<li><a href="mailto:{{owneremail}}">{{owner}}</a></li>
