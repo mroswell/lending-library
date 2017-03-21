@@ -1,5 +1,7 @@
-body {font-family: "Source Sans Pro", Franklin Gothic Book, Helvetica, Arial, sans-serif; font-weight: lighter;
-  border: 52px #F8F8F8 solid; margin: 0px; padding: 20px 20px 200px 20px;}
+/*body {font-family: "Source Sans Pro", Franklin Gothic Book, Helvetica, Arial, sans-serif; font-weight: lighter;*/
+  /*border: 52px #F8F8F8 solid; margin: 0px; padding: 20px 20px 200px 20px;}*/
+body {font-family: Montserrat; font-size: 13px; padding: 10px 0px 40px 0px; color: #333;}
+
 a {text-decoration: none; color: inherit; border-bottom: 1px dotted;}
 a:hover, .tool-box.available a:hover, .tool-box a:hover {color: #55b6ff; border-color: #55b6ff;}
 small {font-weight: 700; font-size: 11px; letter-spacing: .08em;}

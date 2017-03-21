@@ -9,7 +9,8 @@
 		<script type="text/javascript" src='js/tabletop1.3.4.js'></script>
 		<link rel="shortcut icon" href="https://raw.githubusercontent.com/mroswell/openstates-status/gh-pages/favico.png"/>
 		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,700,900' rel='stylesheet' type='text/css'>
-		<link media="screen" rel="stylesheet" type="text/css" href="css/site.css">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link media="screen" rel="stylesheet" type="text/css" href="css/site.css">
 	</head>
 	<body>
 		<header class="container">
@@ -21,11 +22,11 @@
 			</ul>
 		</header>
 		<div id="filters" class="container">
-			<input id="toolSearch" type="search" placeholder="hammer.."></input>
+			<input id="toolSearch" type="search" placeholder="hammer.." />
 			<span class="clear sml-button">Clear</span>
 			<span id="showAvailable" class="sml-button">Show Available</span>
 		</div>
-		<!--div id="tools" class="container"><span class="flash animated">LOADING...</span></div-->
+		<div id="tools" class="container"><span class="flash animated">LOADING...</span></div>
 		<div id="stateTable" class="container"><span class="flash animated">LOADING...</span></div>
 
 		<div id="info" class="container">
@@ -87,8 +88,8 @@
 
 		<script type="text/javascript">
 		  document.addEventListener('DOMContentLoaded', function() {
-	      var URL = "1mlMDqeoU1PZalOLjSY-yigTi4nApf2-rnOUhAAxCpNs"
-	      Tabletop.init( { key: URL, callback: drawToolBox, simpleSheet: true } )
+	      var URL = "1mlMDqeoU1PZalOLjSY-yigTi4nApf2-rnOUhAAxCpNs";
+	      Tabletop.init( { key: URL, callback: drawToolBox, simpleSheet: true } );
 	    })
 		</script>
 	</body>

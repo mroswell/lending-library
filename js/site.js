@@ -1,13 +1,14 @@
 function drawToolBox(data) {
-  // var tools = ich.tools({
-  //  'rows': data
-  //})
-  // $('#tools').html(tools)
+  var tools = ich.map({
+    'rows': data
+  })
+  $('#tools').html(tools)
   
     var articleTable = ich.articleTable({
     'rows': data
   })
   $('#stateTable').html(articleTable)
+
 }
 
 $(document).on( 'click', '#showAvailable', toggleAvailable)
