@@ -26,7 +26,7 @@
 			<input id="toolSearch" type="search" placeholder="hammer.." />
 			<span class="clear sml-button">Clear</span>
 			<span id="showAvailable" class="sml-button">Show Available</span>
-			<span id="showCheckedOut" class="sml-button">Show Checked Out</span>
+			<!--<span id="showCheckedOut" class="sml-button">Show Checked Out</span>-->
 		</div>
 		<div id="tools" class="container"><span class="flash animated">LOADING...</span></div>
     <div id="map"></div>
@@ -35,8 +35,7 @@
 		<div id="info" class="container">
 				<div class="span1">
 					<h4>CONTRIBUTE TO OPEN STATES</h4>
-					<p>If you've been invited by the person who initated this near you, you'll have access and the ability to edit the rows of the spreadsheet feeding data to this site.</p>
-					<p>Add "yes" to the "Checked Out" field if you are working on a state. (Note: the spreadsheet auto-saves.)</p>
+					<p>Add your GitHub account name to the "Checked Out To" field to claim work on a state. (Note: the spreadsheet auto-saves.)</p>
 				</div>
 
 				<div class="span1">
@@ -53,16 +52,17 @@
 
 		<script id="toolsScript" type="text/html">
 		{{#rows}}
-		<div id="{{rowNumber}}" class="tool-box {{#checkedout}}not-{{/checkedout}}available">
+		<div id="{{rowNumber}}" class="tool-box {{#checkedoutto}}not-{{/checkedoutto}}available">
 			<span class="tool-box-tool">{{state1}}</span>
 			<div class="tool-box-bottom {{rowNumber}}">
-				{{#checkedout}} <span class="tool-box-borrowed">CLAIMED</span>{{/checkedout}}
-				{{^checkedout}}<a
+				{{#checkedoutto}} <span class="tool-box-borrowed">CLAIMED</span>{{/checkedoutto}}
+				{{^checkedoutto}}<a
 target="_blank"
-href="https://docs.google.com/spreadsheets/d/1mlMDqeoU1PZalOLjSY-yigTi4nApf2-rnOUhAAxCpNs/edit?usp=sharing"><span class="tool-box-borrow btn">CLAIM STATE</span></a>{{/checkedout}}
+href="https://docs.google.com/spreadsheets/d/1mlMDqeoU1PZalOLjSY-yigTi4nApf2-rnOUhAAxCpNs/edit?usp=sharing"><span
+          class="tool-box-borrow btn">CLAIM STATE</span></a>{{/checkedoutto}}
 				<ul>
 					<li><small>WHO: </small></li>
-					<li>{{checkedout}}</li>
+					<li>{{checkedoutto}}</li>
 					{{#notes}}
 					<li><small>NOTES : </small>{{notes}}</li>
 					{{/notes}}
@@ -85,7 +85,7 @@ href="https://docs.google.com/spreadsheets/d/1mlMDqeoU1PZalOLjSY-yigTi4nApf2-rnO
 			<td class="light-type">{{rowNumber}}</td>
 			<td class="state">{{state1}}</td>
 			<td
-          class="article"><a href="http://github.com/{{ghname}}?tab=repositories" target="_blank">{{checkedout}}</a></td>
+          class="article"><a href="http://github.com/{{ghname}}?tab=repositories" target="_blank">{{checkedoutto}}</a></td>
 			<td><a href="https://github.com/openstates/openstates/pull/{{githubissue}}" target="_blank">{{githubissue}}</a></td>
 			<td>{{notes}}</td></tr>
 		  {{/rows}}
