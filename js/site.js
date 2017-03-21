@@ -1,5 +1,5 @@
 function drawToolBox(data) {
-  var tools = ich.map({
+  var tools = ich.toolsScript({
     'rows': data
   })
   $('#tools').html(tools)

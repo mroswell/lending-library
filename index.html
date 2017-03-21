@@ -7,9 +7,10 @@
 		<script type="text/javascript" src='js/jquery.js'></script>
 		<script type="text/javascript" src='js/site.js'></script>
 		<script type="text/javascript" src='js/tabletop1.3.4.js'></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
 		<link rel="shortcut icon" href="https://raw.githubusercontent.com/mroswell/openstates-status/gh-pages/favico.png"/>
 		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,700,900' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link media="screen" rel="stylesheet" type="text/css" href="css/site.css">
 	</head>
 	<body>
@@ -25,8 +26,10 @@
 			<input id="toolSearch" type="search" placeholder="hammer.." />
 			<span class="clear sml-button">Clear</span>
 			<span id="showAvailable" class="sml-button">Show Available</span>
+			<span id="showCheckedOut" class="sml-button">Show Checked Out</span>
 		</div>
 		<div id="tools" class="container"><span class="flash animated">LOADING...</span></div>
+    <div id="map"></div>
 		<div id="stateTable" class="container"><span class="flash animated">LOADING...</span></div>
 
 		<div id="info" class="container">
@@ -48,16 +51,18 @@
 				</div>
 		</div>
 
-		<script id="map" type="text/html">
+		<script id="toolsScript" type="text/html">
 		{{#rows}}
 		<div id="{{rowNumber}}" class="tool-box {{#checkedout}}not-{{/checkedout}}available">
 			<span class="tool-box-tool">{{state1}}</span>
 			<div class="tool-box-bottom {{rowNumber}}">
 				{{#checkedout}} <span class="tool-box-borrowed">CLAIMED</span>{{/checkedout}}
-				{{^checkedout}}<!==a href="mailto:{{owneremail}}?subject=[Open States - {{state1}}]"><span class="tool-box-borrow btn">CONTACT VOLUNTEER</span></a-->{{/checkedout}}
+				{{^checkedout}}<a
+target="_blank"
+href="https://docs.google.com/spreadsheets/d/1mlMDqeoU1PZalOLjSY-yigTi4nApf2-rnOUhAAxCpNs/edit?usp=sharing"><span class="tool-box-borrow btn">CLAIM STATE</span></a>{{/checkedout}}
 				<ul>
-					<li><small>WHO / WHERE : </small></li>
-					<li><a href="mailto:{{owneremail}}">{{owner}}</a></li>
+					<li><small>WHO: </small></li>
+					<li>{{checkedout}}</li>
 					{{#notes}}
 					<li><small>NOTES : </small>{{notes}}</li>
 					{{/notes}}
@@ -79,8 +84,9 @@
 		  	<tr class="{{rowNumber}}">
 			<td class="light-type">{{rowNumber}}</td>
 			<td class="state">{{state1}}</td>
-			<td class="article"><a href="{{githubname}}" target="_blank"></a></td>
-			<td>{{githubissue}}</td> 
+			<td
+          class="article"><a href="http://github.com/{{ghname}}?tab=repositories" target="_blank">{{checkedout}}</a></td>
+			<td><a href="https://github.com/openstates/openstates/pull/{{githubissue}}" target="_blank">{{githubissue}}</a></td>
 			<td>{{notes}}</td></tr>
 		  {{/rows}}
 	  </table>
@@ -92,5 +98,6 @@
 	      Tabletop.init( { key: URL, callback: drawToolBox, simpleSheet: true } );
 	    })
 		</script>
+    <script src="js/d3map.js"></script>
 	</body>
 </html>
