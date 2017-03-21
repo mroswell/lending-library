@@ -7,7 +7,7 @@
 		<script type="text/javascript" src='js/jquery.js'></script>
 		<script type="text/javascript" src='js/site.js'></script>
 		<script type="text/javascript" src='js/tabletop1.3.4.js'></script>
-    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
 		<link rel="shortcut icon" href="https://raw.githubusercontent.com/mroswell/openstates-status/gh-pages/favico.png"/>
 		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,700,900' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -40,8 +40,7 @@
 
 				<div class="span1">
 					<h4>CREDIT</h4>
-					<p>The site is open source (free for all), uses a Google Spreadsheet for the data and is designed to be duplicated and live in minutes (Fork-n-go!). You can set up your own by following the instructions attached to the  <a href="http://www.github.com/jlord/lending-library" target="_blank">project's code</a> on GitHub. GitHub also hosts these pages for free with <a href="http://pages.github.com" target="_blank">GitHub Pages</a>.
-
+					<p>The site is open source, uses a Google Spreadsheet for the data and is adapted from jlord's   <a href="http://www.github.com/jlord/lending-library" target="_blank">Fork-n-go site</a> by Marjorie Roswell.
 					<p>
 						<a class="imglink" href="http://jlord.github.io/forkngo" target="_blank">
 							<img src="https://raw.githubusercontent.com/jlord/forkngo/gh-pages/badges/charcoal.png" width="200">
@@ -61,8 +60,14 @@ target="_blank"
 href="https://docs.google.com/spreadsheets/d/1mlMDqeoU1PZalOLjSY-yigTi4nApf2-rnOUhAAxCpNs/edit?usp=sharing"><span
           class="tool-box-borrow btn">CLAIM STATE</span></a>{{/checkedoutto}}
 				<ul>
+          {{#checkedoutto}}
 					<li><small>WHO: </small></li>
-					<li>{{checkedoutto}}</li>
+					<li><a href="http://github.com/{{checkedoutto}}?tab=repositories" target="_blank">{{checkedoutto}}</a></li>
+          {{/checkedoutto}}
+          {{#pullrequest}}
+          <li><small>PULL REQUEST:</small></li>
+          <li><a href="https://github.com/openstates/openstates/pull/{{pullrequest}}" target="_blank">{{pullrequest}}</a></li>
+          {{/pullrequest}}
 					{{#notes}}
 					<li><small>NOTES : </small>{{notes}}</li>
 					{{/notes}}
@@ -78,15 +83,15 @@ href="https://docs.google.com/spreadsheets/d/1mlMDqeoU1PZalOLjSY-yigTi4nApf2-rnO
 			<th class="fancy">&#8470;</th>
 			<th class="date">State</th>
 			<th class="">Claimed by</th>
-			<th>Issue</th>
+			<th>Pull Request</th>
 			<th>Notes</th></tr>
 		  {{#rows}}
 		  	<tr class="{{rowNumber}}">
 			<td class="light-type">{{rowNumber}}</td>
 			<td class="state">{{state1}}</td>
 			<td
-          class="article"><a href="http://github.com/{{ghname}}?tab=repositories" target="_blank">{{checkedoutto}}</a></td>
-			<td><a href="https://github.com/openstates/openstates/pull/{{githubissue}}" target="_blank">{{githubissue}}</a></td>
+          class="article"><a href="http://github.com/{{checkedoutto}}?tab=repositories" target="_blank">{{checkedoutto}}</a></td>
+			<td><a href="https://github.com/openstates/openstates/pull/{{pullrequest}}" target="_blank">{{pullrequest}}</a></td>
 			<td>{{notes}}</td></tr>
 		  {{/rows}}
 	  </table>
