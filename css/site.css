@@ -27,7 +27,7 @@ small {
 h1 {
     font-size: 68px;
     color: #0087ff;
-    margin: 30px 0px 20px 0px;
+    margin: 0px 0px 20px 0px;
 }
 
 h4, h5 {
@@ -251,12 +251,12 @@ input:not([type=submit]):not([type=file]):not([type=checkbox]) {
 
 .tool-box-tool {
     display: block;
-    font-size: 26px;
-    padding: 10px 0;
+    font-size: 25px;
+    padding: 9px 0;
     text-align: center;
     width: 100%;
     cursor: pointer;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .tool-box:hover {
@@ -371,3 +371,5 @@ Licensed under the MIT license
         max-width: 100%;
     }
 }
+
+svg {display: block; margin:auto;}

@@ -17,6 +17,9 @@ var path = d3.geo.path()
   .projection(projection);
 
 //Define quantize scale to sort data values into buckets of color
+//  .range(["rgb(116,196,118)","rgb(0,109,44)"])
+//.range(["rgb(57,198,90)","rgb(0,109,44)"])
+
 var color = d3.scale.ordinal()
   .range(["rgb(116,196,118)","rgb(0,109,44)"])
   //Colors taken from colorbrewer.js, included in the D3 download
