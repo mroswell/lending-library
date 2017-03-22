@@ -81,7 +81,7 @@ function render() {
     .attr("d", path)
     .style("fill", function(d) {
       var value = d.properties.status;
-      return value ? color(value) : '#ccc'
+      return value ? color(value) : '#e0e0df'
     })
     .attr("stroke", "white")
     .attr("stroke-width", 1)
