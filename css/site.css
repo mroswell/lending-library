@@ -209,6 +209,16 @@ input:not([type=submit]):not([type=file]):not([type=checkbox]) {
     -moz-column-width: 250px;
 }
 
+#tools.show-available .not-available {
+    display: none;
+}
+
+#tools .filtered {
+  display: none;
+
+}
+
+
 .tool-box {
     background: #E0E0DF;
     color: #5A5A5A;
