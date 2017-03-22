@@ -6,6 +6,7 @@ var gData;
 function initialize(data) {
     gData = data
     drawToolBox(data)
+    drawMap(data);
 }
 
 function drawToolBox(data) {
@@ -18,7 +19,6 @@ function drawToolBox(data) {
     'rows': data
   })
   $('#stateTable').html(articleTable)
-
 }
 
 $(document).on( 'click', '#showAvailable', toggleAvailable)

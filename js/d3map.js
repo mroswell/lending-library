@@ -18,10 +18,10 @@ var path = d3.geo.path()
 
 //Define quantize scale to sort data values into buckets of color
 var color = d3.scale.ordinal()
-  .range(["rgb(237,248,233)","rgb(116,196,118)","rgb(0,109,44)"])
+  .range(["rgb(116,196,118)","rgb(0,109,44)"])
   //Colors taken from colorbrewer.js, included in the D3 download
   //Set input domain for color scale
-  .domain(["Not Started","Partial", "Up-to-date"]);
+  .domain(["yes", "no"]);
 
 
 //Create SVG element
@@ -33,14 +33,20 @@ var svg = mapdiv.append("svg")
 
 var infoBox = mapdiv.append('div')
 
-//Load in agriculture data
-//			d3.csv("openelection_volunteers.csv", processCSV)
-
-d3.json("js/sample_metadata_status.json", processJSON);
+function drawMap(data){
+  processJSON(data.map(function(gstate){
+    return {
+      state: gstate.state1,
+      volunteer: gstate.checkedoutto,
+      pr:gstate.pullrequest,
+      status: gstate.conversioncomplete ? gstate.conversioncomplete.toLowerCase() === 'no'? '': 'yes' : ''
+    }})
+  );
+}
 
 
 function processJSON(data) {
-  data.objects.forEach(function(row) {
+  data.forEach(function(row) {
     stateStatuses[row.state] = row
   })
   loadGeo()
@@ -78,7 +84,8 @@ function render() {
     .attr("stroke-width", 1)
     .on('mouseover', function(d) {
       var dd = d.properties
-      infoBox.html('<strong>' + dd.state + '</strong><br> Metadata Status: ' + dd.status + '<br> Volunteer(s): ' +  dd.volunteers)
+      infoBox.html('<strong>' + dd.state + '</strong><br> Current Volunteer: ' +  dd.volunteer
+        + '<br> Pull Request: ' + dd.pr)
     })
 
 };
